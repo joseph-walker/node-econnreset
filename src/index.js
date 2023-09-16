@@ -1,6 +1,6 @@
 import { request, Agent } from "http";
 
-const agent = new Agent({ keepAlive: true, maxSockets: 1 });
+const agent = new Agent({ keepAlive: true });
 
 function sleep(ms) {
   return new Promise(function(resolve) {
