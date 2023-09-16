@@ -7,3 +7,6 @@ Node's HTTP implementation seems to come with a race condition related to keepal
 1) Run the server `node run ./src/server.js`
 2) Run the client `node run ./src/index.js`
 3) Observe the ECONNRESET that will eventually occur (It is a race condition so is technically random, but will generally occur within 15 seconds)
+
+## Observations
+Given that the issue is resolved if the event handler for the request's `response` event is removed, this is almost assuredly related to the event loop and queue order.
