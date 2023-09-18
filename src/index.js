@@ -20,7 +20,7 @@ async function main() {
     });
 
     req.on("response", function(response) {
-      response.on("data", function() { }); // Deleting this line resolves the ECONNRESET
+      response.on("data", console.log); // Deleting this line resolves the ECONNRESET
     });
 
     req.end();
